@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 const PositionBox = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.blueBox} />
       <View style={styles.yelloxBox} />
       <View style={styles.purpleBox} />
     </View>
@@ -13,7 +14,7 @@ export default PositionBox;
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
+    flex: 1,
     backgroundColor: "green",
   },
   yelloxBox: {
@@ -22,7 +23,8 @@ const styles = StyleSheet.create({
     height: 150,
     borderWidth: 10,
     borderColor: "white",
-    top: 100,
+    position: "absolute",
+    top: 0,
   },
   purpleBox: {
     backgroundColor: "purple",
@@ -30,6 +32,16 @@ const styles = StyleSheet.create({
     height: 150,
     borderWidth: 10,
     borderColor: "white",
-    right: -200,
+    position: "absolute",
+    top: 0,
+    right: 0,
+  },
+  blueBox: {
+    backgroundColor: "blue",
+    // width: 150,
+    // height: 150,
+    borderWidth: 10,
+    borderColor: "white",
+    ...StyleSheet.absoluteFillObject,
   },
 });
